@@ -4,9 +4,10 @@ import Header from '../../components/Header/Header'
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 const Home = () => {
     const[category,setCategory] = useState("All");
+    const[view, setView] = useState(false);
   return (
     <div>
-        <Header/>
+        <Header view = {view} setView = {setView}/>
         <ExploreMenu category ={category} setCategory ={setCategory}/>
     </div>
   )
