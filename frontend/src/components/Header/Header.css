@@ -37,7 +37,12 @@ font-size: max(4.0vw, 20px);
     font-size: max(1vw,13px);
     border-radius: 50px;
     cursor: pointer;
+    transition: 0.5s;
+    
 
+}
+.header-contents button:hover{
+   transform: scale(1.05);
 }
 .header-contents .active{
     border: 2px solid #e2e2e2;
@@ -50,4 +55,25 @@ font-size: max(4.0vw, 20px);
     cursor: pointer;
     transition: 0.1s;
 
+}
+
+@media (max-width:1050px){
+   
+    .header-contents{
+        max-width: 45%;
+    }
+
+}
+@media (max-width:750px){
+    
+    .header-contents{
+        max-width: 65%;
+    }
+    .header-contents p{
+        display: none;
+    }
+    .header-contents button{
+        padding: 2vw 4vw;
+    }
+    
 }
