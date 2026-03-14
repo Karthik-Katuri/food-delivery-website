@@ -2,13 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.explore-menu{
     color: #262626;
     font-weight: 500;
-
 }
+
+
 .explore-menu-text{
     max-width: 60%;
     color: #808080;
@@ -21,10 +19,15 @@
     text-align: center;
     margin: 20px 0px;
     overflow-x: scroll;
+   
 
 }
 .explore-menu-list::-webkit-scrollbar{
     display: none;
+}
+.explore-menu-list-item{
+    padding: 5px;
+    border-radius: 50%;
 }
 .explore-menu-list-item img{
     width: 7.5vw;
@@ -32,6 +35,9 @@
     cursor: pointer;
     border-radius: 50%;
     transition: 0.2s;
+}
+.explore-menu-list-item img:hover{
+transform: scale(1.05);   
 }
 .explore-menu-list-item p{
     margin-top: 10px;
@@ -47,5 +53,12 @@
 }
 .explore-menu-list-item .active{
     border: 4px solid tomato;
-    padding: 2px;
+    
+}
+@media (max-width:1050px){
+    .explore-menu-text{
+        max-width: 100%;
+        font-size: 14px;
+    }
+    
 }
