@@ -64,8 +64,16 @@
 }
 .food-item-counter img{
     width: 30px;
-    
-}
 
+}
+.food-item-image-container .add:hover{
+    transform: scale(1.05);
+}
+.food-item-image-container .add1:hover{
+    transform: scale(1.05);
+}
+.food-item-image-container .remove:hover{
+    transform: scale(1.05);
+}
 
 
