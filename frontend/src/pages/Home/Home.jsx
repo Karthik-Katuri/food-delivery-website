@@ -9,8 +9,10 @@ const Home = () => {
   return (
     <div>
         <Header view = {view} setView = {setView}/>
-        <ExploreMenu category ={category} setCategory ={setCategory}/>
-        <FoodDisplay category={ category}/>
+        {view&&<ExploreMenu category ={category} setCategory ={setCategory}/>}
+        
+        {view && <FoodDisplay category={ category}/>}
+
     </div>
   )
 }
