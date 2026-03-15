@@ -5,12 +5,13 @@ import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../components/foodDisplay/foodDisplay'
 import AppDownload from '../../components/AppDownload/AppDownload'
 const Home = () => {
-    const[category,setCategory] = useState("All");
-    const[view, setView] = useState(false);
+    const [category, setCategory] = useState("All");
+  const [view, setView] = useState(false);
   return (
     <div>
+        
         <Header view = {view} setView = {setView}/>
-        {view&&<ExploreMenu category ={category} setCategory ={setCategory}/>}
+        {view &&<ExploreMenu category ={category} setCategory ={setCategory}/>}
         
         {view && <FoodDisplay category={ category}/>}
         <AppDownload/>
