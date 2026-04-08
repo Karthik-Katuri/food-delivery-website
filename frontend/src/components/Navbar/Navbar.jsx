@@ -7,7 +7,7 @@ import { StoreContext } from '../../context/StoreContext';
 
 const Navbar = ({setShowLogin}) => {
     const[menu,setMenu] = useState("");
-    const {getTotalCartAmount,token,setToken} = useContext(StoreContext);
+    const {getTotalCartAmount,token,setToken,view,setView} = useContext(StoreContext);
     const navigate = useNavigate();
     const logout = ()=>{
         localStorage.removeItem("token");
@@ -23,7 +23,7 @@ const Navbar = ({setShowLogin}) => {
             <Link  to='/' onClick={()=>setMenu("Home")} 
             className={menu==="Home" ?"active":""}>Home</Link>
             
-            <a  onClick={()=>{setMenu("Menu")}} href='#explore-menu'  
+            <a  onClick={()=>{setMenu("Menu"), setView(!view)}} href='#explore-menu'  
             className={menu==="Menu" ?"active":""}>Menu</a>
             
             <a href='#app-download' onClick={()=>setMenu("Mobile-app")} 
