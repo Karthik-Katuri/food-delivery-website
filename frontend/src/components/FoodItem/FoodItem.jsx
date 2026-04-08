@@ -6,6 +6,9 @@ import { StoreContext } from '../../context/StoreContext';
 const FoodItem = ({id,name,price,description,image}) => {
     
     const {cartItems, addToCart, removeFromCart,URL} = useContext(StoreContext);
+     const handleSubmit = (e) => {
+  e.preventDefault(); 
+}
 
   return (
     <div className='food-item'>
