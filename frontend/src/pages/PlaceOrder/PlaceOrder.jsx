@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext, useState } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
@@ -68,6 +69,33 @@ const PlaceOrder = () => {
           <input required name='country' onChange={onChangeHandler} value={data.country} type="text" placeholder='Country'/>
         </div>
         <input required name='phone' onChange={onChangeHandler} value={data.phone} type="text" placeholder='Phone' />
+=======
+import React, { useContext } from 'react'
+import './PlaceOrder.css'
+import { StoreContext } from '../../context/StoreContext'
+const PlaceOrder = () => {
+
+    const{getTotalCartAmount} = useContext(StoreContext);
+  return (
+    <form  className="place-order">
+      <div className='place-order-left'>
+        <p className="title">Delivery Information</p>
+        <div className="multi-fields">
+          <input type="text" placeholder='First Name'/>
+          <input type="text" placeholder='Last Name'/>
+        </div>
+        <input type="email"placeholder='email address' />
+        <input type="text" placeholder='Street' />
+        <div className="multi-fields">
+          <input type="text" placeholder='City'/>
+          <input type="text" placeholder='State'/>
+        </div>
+        <div className="multi-fields">
+          <input type="text" placeholder='Zip-Code'/>
+          <input type="text" placeholder='Country'/>
+        </div>
+        <input type="text" placeholder='Phone' />
+>>>>>>> 75a5fe24430f34f5b77ac6c05b799ed437295f27
       </div>
       <div className='place-order-right'>
          <div className="cart-total">
@@ -89,7 +117,11 @@ const PlaceOrder = () => {
                     </div>
                    
                 </div>
+<<<<<<< HEAD
                  <button type='submit' >PROCEED TO PAYMENT</button>
+=======
+                 <button >PROCEED TO PAYMENT</button>
+>>>>>>> 75a5fe24430f34f5b77ac6c05b799ed437295f27
             </div>
       </div>
     </form>

@@ -28,9 +28,14 @@ const placeOrder = async(req,res)=>{
                     name:item.name
                 },
                 unit_amount:item.price*100*80,
+<<<<<<< HEAD
                 
             },
             quantity:item.quantity
+=======
+                quantity:item.quantity
+            }
+>>>>>>> 75a5fe24430f34f5b77ac6c05b799ed437295f27
         }))
         line_items.push({
             price_data:{
@@ -39,9 +44,14 @@ const placeOrder = async(req,res)=>{
                     name:"Delivery Charges"
                 },
                 unit_amount:2*100*80,
+<<<<<<< HEAD
                 
             },
             quantity:1
+=======
+                quantity:1
+            }
+>>>>>>> 75a5fe24430f34f5b77ac6c05b799ed437295f27
         })
         const session = await stripe.checkout.sessions.create({
             line_items:line_items,
@@ -58,6 +68,7 @@ const placeOrder = async(req,res)=>{
 
 }
 
+<<<<<<< HEAD
 const verifyOrder = async(req,res)=>{
     const {orderId,success} = req.body;
     try {
@@ -76,3 +87,6 @@ const verifyOrder = async(req,res)=>{
 }
 
 export {placeOrder,verifyOrder};
+=======
+export {placeOrder};
+>>>>>>> 75a5fe24430f34f5b77ac6c05b799ed437295f27
