@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import axios from "axios";
 
 const Verify = () => {
-    const [searchParams,setSeacrParams] = useSearchParams();
+    const [searchParams,setSearchParams] = useSearchParams();
     const success = searchParams.get("success");
     const orderId = searchParams.get("orderId");
     const {URL} = useContext(StoreContext);
