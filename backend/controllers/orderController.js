@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // 🟢 Place Order
 const placeOrder = async (req, res) => {
 
-    const frontend_url = "http://localhost:5173";
+    const frontend_url = "http://localhost:5174";
 
     try {
         const newOrder = new orderModel({
@@ -93,4 +93,61 @@ const userOrders = async (req,res)=>{
         res.json({success:false,message:"Error"});
     }
 }
-export { placeOrder, verifyOrder,userOrders };
+
+//listing orders for admin pannel
+
+const listOrders = async(req,res)=>{
+    try {
+        const orders = await orderModel.find({});
+        res.json({success:true,data:orders})
+    } catch (error) {
+        console.log(error);
+        res.json({success:false,message:"Error"})
+        
+    }
+}
+
+//api for updating order status
+
+const updateStatus = async (req, res) => {
+    try {
+        const { orderId, status } = req.body;
+
+        // 🔹 Validation
+        if (!orderId || !status) {
+            return res.json({
+                success: false,
+                message: "Missing orderId or status"
+            });
+        }
+
+        // 🔹 Update order
+        const updatedOrder = await orderModel.findByIdAndUpdate(
+            orderId,
+            { status }
+            
+        );
+
+        // 🔹 Check if order exists
+        if (!updatedOrder) {
+            return res.json({
+                success: false,
+                message: "Order not found"
+            });
+        }
+
+        res.json({
+            success: true,
+            message: "Status Updated"
+                   });
+
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success: false,
+            message: "Server Error"
+        });
+    }
+};
+
+export { placeOrder, verifyOrder,userOrders,listOrders,updateStatus };
